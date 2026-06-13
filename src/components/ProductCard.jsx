@@ -1,4 +1,4 @@
-function ProductCard({ product }) {
+function ProductCard({ product,addToCart }) {
   return (
     <div className="w-50  border rounded-lg p-3 shadow-md">
       <img
@@ -19,7 +19,7 @@ function ProductCard({ product }) {
         {product.category}
       </p>
 
-      <button className="bg-black text-white px-2 py-1 rounded mt-2">
+      <button className="bg-black text-white px-2 py-1 rounded mt-2"  onClick={() => addToCart(product)}>
         Add To Cart
       </button>
     </div>

@@ -10,19 +10,32 @@ import Navbar from './components/Navbar'
 
 function App() {
 
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (product) => {
+  setCartItems([...cartItems, product]);
+};
 
   return (
     <>
 
-    <Navbar />
+   <Navbar cartItems={cartItems} />
 
     <Routes>
 
     <Route path='/' element={<Home/>}/>
 
-    <Route path='/products' element={<Products/>}/>
+    <Route
+  path="/products"
+  element={
+    <Products addToCart={addToCart} />
+  }
+/>
 
-    <Route path='/cart' element={<Cart/>}/>
+    <Route
+  path="/cart"
+  element={<Cart cartItems={cartItems} />}
+/>
 
     <Route path='/login' element={<Login/>}/>
 
