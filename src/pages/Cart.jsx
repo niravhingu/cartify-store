@@ -1,6 +1,8 @@
 import React from "react";
 
-function Cart({ cartItems }) {
+function Cart({ cartItems ,removeFromCart }) {
+  
+
   return (
     <div className="max-w-5xl mx-auto px-5 py-10">
 
@@ -46,7 +48,7 @@ function Cart({ cartItems }) {
                 In Stock
               </div>
 
-              <button className="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 duration-300">
+              <button className="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 duration-300" onClick={() => removeFromCart(item.id)}>
                 Remove
               </button>
 
